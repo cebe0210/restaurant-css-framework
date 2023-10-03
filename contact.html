@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="customstyle.css">
     <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+    <style>
+        .icon {
+            width: 25px;
+            height: 25px;
+        }
+    </style>
     <title>La Follia della Pasta : Contact</title>
 </head>
 <body> 
@@ -27,52 +33,85 @@
         </header>
     
        
-        <form>
-            <form>
-                <div class="mb-3">
-                    <label for="prenom">Prénom :</label>
-                    <input type="text" id="prenom" name="prenom" required>
+        
+            <form class="justify-content-center mt-3">
+                <div class="row">
+                    <div class="col-10 offset-1 mb-3">    
+                        <input type="text" class="form-control" placeholder="Prénom" aria-label="prénom" required>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="nom">Nom :</label>
-                    <input type="text" id="nom" name="nom" required>
+                <div class="row">          
+                    <div class="col-10 offset-1 mb-3">
+                        <input type="text" class="form-control" placeholder="Nom" aria-label="nom" required>
+                    </div>
                 </div>
-                <div>
-                    <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" required>
-                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div class="row">          
+                    <div class="col-10 offset-1 mb-3">                    
+                        <input type="email" class="form-control" placeholder="Email" aria-label="email" required>
+                    </div>
+                </div>    
+                <div class="row">          
+                    <div class="col-10 offset-1 mb-3">
+                        <input type="text" class="form-control" placeholder="Numéro de Téléphone" aria-label="phone" required>
+                    </div>
+                </div>   
+                <div class="row mb-3">
+                    <div class="col-5 offset-1">
+                        <label for="objet">Objet du message :</label>
+                        <select class="form-select" aria-label="objet">
+                            <option value="Information">Information</option>
+                            <option value="Reservation">Reservation</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="col-4 offset-1">
+                        <label for="objet">Etablissement :</label>
+                        <select class="form-select" aria-label="etablissement">
+                            <option value="bruxelles">Bruxelles</option>
+                            <option value="namur">Namur</option>
+                            <option value="liège">Liège</option>
+                            <option value="arlon">Arlon</option>
+                            <option value="charleroi">Charleroi</option>
+                            <option value="antwerpen">Antwerpen</option>
+                            <option value="gent">Gent</option>
+                        </select>
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="col-10 offset-1 mb-3">
+                    <textarea class="form-control" placeholder="Votre message" id="floatingTextarea4"></textarea>
+                    </div>
                 </div>
-                <div>
-                    <label for="phone">Téléphone:</label>
-                    <input type="text" id="phonr" name="phone" required>
+                <div class="row">
+                    <div class="col-2 offset-5 mx-auto mb-5">
+                        <button type="submit" class="btn btn-warning ">Soumettre</button>
+                    </div>    
                 </div>
-                <div>
-                    <label for="objet">Objet du message :</label>
-                    <select id="objet" name="objet" required>
-                        <option value="Information">Information</option>
-                        <option value="Reservation">Reservation</option>
-                        <option value="Suggestion">Suggestion</option>
-                        <option value="autre">Autre</option>
-                    </select>
+            </form>
+
+
+            <div class="row">
+                <div class="col-6 offset-3 d-flex justify-content-between mb-5">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="icon/Instagram.png" alt="Instagram" class="img-fluid" style="max-width: 50px;">
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="icon/Facebook.png" alt="Facebook" class="img-fluid" style="max-width: 50px;">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="icon/twitter.png" alt="Twitter" class="img-fluid" style="max-width: 50px;">
+                    </a>        
+                    <a href="https://www.linkedin.com" target="_blank">
+                        <img src="icon/linkedin.png" alt="linkedin" class="img-fluid" style="max-width: 50px;">
+                    </a>    
+                    <a href="https://www.tiktok.com" target="_blank">
+                        <img src="icon/tiktok.png" alt="Tiktok" class="img-fluid" style="max-width: 50px;">
+                    </a>               
                 </div>
-                <div>
-                    <label for="objet">Etablissement :</label>
-                    <select id="objet" name="objet" required>
-                        <option value="bruxelles">Bruxelles</option>
-                        <option value="namur">Namur</option>
-                        <option value="liège">Liège</option>
-                        <option value="arlon">Arlon</option>
-                        <option value="charleroi">Charleroi</option>
-                        <option value="antwerpen">Antwerpen</option>
-                        <option value="gent">Gent</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="message">Message :</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-            <button type="submit" class="btn btn-primary">Soumettre</button>
-          </form>
+            </div>
+
+
 
         <footer class="text-center">
             <h4>Contactez-nous</h4>
