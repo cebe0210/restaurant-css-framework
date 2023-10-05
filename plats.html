@@ -16,7 +16,7 @@
                         <div class="navbar-nav border-bottom border-secondary">
                             <a class="nav-link mx-3 fs-4" href="index.html">Accuille</a>
                             <a class="nav-link mx-3 fs-4" href="menu.html">Menu</a>
-                            <a class="nav-link active font-size-larger mx-3 fs-4" aria-current="page" href="galerie.html">Galerie</a>
+                            <a class="nav-link active font-size-larger mx-3 fs-4" aria-current="page" href="plats.html">Galerie</a>
                             <a class="nav-link mx-3 fs-4" href="about.html">A propos</a>
                             <a class="nav-link mx-3 fs-4" href="contact.html">Nous contacter</a>
                         </div>
@@ -25,44 +25,93 @@
             </nav>
         </header>
         <h1 class="text-center">Galerie photo</h1>
+        
+          
+        <div class="row">
+          <div class="col-10 offset-1">
+            <h2 class="text-center mt-4">Nos plats</h2>
+            <div id="carouselExampleCaptions" class="carousel slide">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 0"></button>
+
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="img/Carousel/champignons.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark bg-white">
+                    <h5>Pappardelle aux champignions</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="img/Carousel/pesto.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block text-dark bg-white">
+                    <h5>Pâtes au pesto</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="img/Carousel/gnocchi.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block text-dark bg-white">
+                    <h5>Gnocchi sauce tomate et mozzarella</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="img/Carousel/legume.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block text-dark bg-white">
+                    <h5>Pâtes au légumes grillés</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="img/Carousel/vongole.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block text-dark bg-white">
+                    <h5>Linguines ale vongole</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>  
+          </div>
+         
 
 
-          <h2 class="text-center mt-4">Nos plats</h2>
-    <!--Image pagination-->
-    <div class="row">
-        <div class="col-10 offset-1">
-          <div class="row">
-            <div class="col-md-4">
-              <img src="img/vertical/aleisha-kalina-tQWvZi0Fh48-unsplash.jpg" alt="Photo 7" class="img-fluid">
-            </div>
-            <div class="col-md-4">
-              <img src="img/vertical/shardar-tarikul-islam-BwFjbXyeP64-unsplash.jpg" alt="Photo 8" class="img-fluid">
-            </div>
-            <div class="col-md-4">
-              <img src="img/vertical/shourav-sheikh-G3QteM5boY8-unsplash.jpg" alt="Photo 9" class="img-fluid">
-            </div>
-          </div>  
-        </div>
-    </div>      
-    <!-- Pagination -->
+
+
+        <!-- Pagination -->
         <nav aria-label="Page navigation example">
             <ul class="pagination  justify-content-center mt-3">
                 <li class="page-item">
-                    <a class="page-link" href="galerie-2.html" aria-label="Previous">
+                    <a class="page-link" href="entrees.html" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="galerie.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="galerie-1.html">2</a></li>
-                <li class="page-item active"><a class="page-link" href="galerie-2.html">3</a></li>
+                <li class="page-item"><a class="page-link" href="entrees.html">Entrées</a></li>
+                <li class="page-item active"><a class="page-link" href="plats.html">Plats</a></li>
+                <li class="page-item"><a class="page-link" href="desserts.html">Desserts</a></li>
                 <li class="page-item">
-                <a class="page-link" href="galerie.html" aria-label="Next">
+                <a class="page-link" href="desserts.html" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
                 </a>
                 </li>
             </ul>
         </nav>
-        <h2 class="text-center">Notre savoir-faire</h2>
+    </div>
+
+       <h2 class="text-center">Notre savoir-faire</h2>
         <!--Carousel-->
         <div class="row"></div>
         <div  id="carouselExampleIndicators" class="carousel slide col-10 offset-1">
@@ -103,7 +152,7 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-        <!--Footer-->  
+
         <footer class="text-center">
             <h4>Contactez-nous</h4>
             <p>Adresse : 123 Rue de la Pasta, 1000 Bruxelles<br>
