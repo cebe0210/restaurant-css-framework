@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Montserra;
+    src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+#cb-cookie-banner { 
+    position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; border-radius: 0; display: none;
+}
+body {
+    font-family: Montserra;
+}
