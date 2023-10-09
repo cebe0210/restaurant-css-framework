@@ -1,5 +1,7 @@
 # _Restaurant_
 
+## [Visiter la version WEB ](https://cebe0210.github.io/restaurant-css-framework/index.html "La Follia della Pasta")
+
 Ce travail est le resultat de l'apprentissage des bases de Bootstrap pour la formation de Web-Dev-Jr que suis actuellement chez [BeCode](https://becode.org/all-trainings/pedagogical-framework-junior-developer/ "BeCode.org")
 
 ![BeCode](https://res.cloudinary.com/practicaldev/image/fetch/s--lirxSGIl--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/organization/profile_image/1675/3e6f1228-27eb-47af-a6ce-b4cd0854f8ac.png "BeCode")
@@ -84,8 +86,6 @@ site : https://unsplash.com/
 **Photo de [***Tom Dillon***](https://unsplash.com/fr/@tdillon19?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Tom Dillon")** sur [*Unsplash*](https://unsplash.com/fr/photos/9eIbwtyl4Xs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Unsplash")
 
 **Photo de [***Jakub Kapusnak***](https://unsplash.com/fr/@foodiesfeed?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Jakub Kapusnak")** sur [*Unsplash*](https://unsplash.com/fr/photos/tEVisOXz26Y?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Unsplash")
-
-vertical :
 
 **Photo de [***Bruna Branco***](https://unsplash.com/fr/@brunabranco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Bruna Branco")** sur [*Unsplash*](https://unsplash.com/fr/photos/t8hTmte4O_g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Unsplash")
 
