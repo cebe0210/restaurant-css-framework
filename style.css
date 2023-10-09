@@ -9,3 +9,8 @@
 body {
     font-family: Montserra;
 }
+
+.social img:hover {
+   transform: scale(1.2);
+
+}
