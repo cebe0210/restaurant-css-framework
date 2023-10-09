@@ -1,6 +1,6 @@
 # _Restaurant_
 
-## [Visiter la version WEB ](https://cebe0210.github.io/restaurant-css-framework/index.html "La Follia della Pasta")
+## [Visitez la version WEB ](https://cebe0210.github.io/restaurant-css-framework/index.html "La Follia della Pasta")
 
 Ce travail est le resultat de l'apprentissage des bases de Bootstrap pour la formation de Web-Dev-Jr que suis actuellement chez [BeCode](https://becode.org/all-trainings/pedagogical-framework-junior-developer/ "BeCode.org")
 
