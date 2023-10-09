@@ -1,4 +1,4 @@
-
+/*cookie*/
 function showCookieBanner(){
     let cookieBanner = document.getElementById("cb-cookie-banner");
     cookieBanner.style.display = "block";
@@ -22,6 +22,19 @@ function initializeCookieBanner(){
     }
     }
 
-    window.onload = initializeCookieBanner();
-    window.cb_hideCookieBanner = hideCookieBanner;
-                   
+
+
+/*btn*/
+const alertTrigger = document.getElementById('liveAlertBtn');
+const liveAlert = document.getElementById('liveAlert');
+
+alertTrigger.addEventListener('click', () => {
+    liveAlert.classList.remove('fade'); // Pour afficher l'alerte
+    liveAlert.style.display = 'block';
+});
+
+// Gérer la fermeture de l'alerte en cliquant sur le bouton de fermeture
+const closeBtn = liveAlert.querySelector('.btn-close');
+closeBtn.addEventListener('click', () => {
+    liveAlert.style.display = 'none';
+});

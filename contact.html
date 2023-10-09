@@ -49,31 +49,31 @@
         <h1 class="text-center mt-3">Nous contacter</h1>
     
        
-        
-            <form class="justify-content-center mt-5">
-                <div class="row">
-                    <div class="col-10 offset-1 mb-3">    
+        <div class="row">
+            <form class="mt-5" id="soumettre">
+                <div class="row ">
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">    
                         <input type="text" class="form-control" placeholder="Prénom" aria-label="prénom" required>
                     </div>
                 </div>
                 <div class="row">          
-                    <div class="col-10 offset-1 mb-3">
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">
                         <input type="text" class="form-control" placeholder="Nom" aria-label="nom" required>
                     </div>
                 </div>
                 <div class="row">          
-                    <div class="col-10 offset-1 mb-3">                    
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">                    
                         <input type="email" class="form-control" placeholder="Email" aria-label="email" required>
                     </div>
                 </div>    
                 <div class="row">          
-                    <div class="col-10 offset-1 mb-3">
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">
                         <input type="text" class="form-control" placeholder="Numéro de Téléphone" aria-label="phone" required>
                     </div>
                 </div>   
-                <div class="row mb-3">
-                    <div class="col-5 offset-1">
-                        <label for="objet">Objet du message :</label>
+                <div class="row mb-3 justify-content-center">
+                    <div class="col-6 col-md-5 col-xl-4">
+                        <label for="objet">Objet :</label>
                         <select class="form-select" aria-label="objet">
                             <option value="Information">Information</option>
                             <option value="Reservation">Reservation</option>
@@ -81,7 +81,7 @@
                             <option value="autre">Autre</option>
                         </select>
                     </div>
-                    <div class="col-4 offset-1">
+                    <div class="col-6 col-md-5 col-xl-4">
                         <label for="objet">Etablissement :</label>
                         <select class="form-select" aria-label="etablissement">
                             <option value="bruxelles">Bruxelles</option>
@@ -95,33 +95,35 @@
                     </div>
                 </div>    
                 <div class="row">
-                    <div class="col-10 offset-1 mb-3">
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">
                     <textarea class="form-control" placeholder="Votre message" id="floatingTextarea4"></textarea>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-2 offset-5 text-center mb-5">
-                        <button type="submit" class="btn btn-success ">Soumettre</button>
-                    </div>    
-                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-xl-8 mb-3 text-center">
+                        <button type="submit" class="btn btn-success">Soumettre</button>
+                    </div>   
+                </div>         
             </form>
+        </div>
+      
 
-
+            <!--reseaux socieaux-->
             <div class="row">
-                <div class="col-6 offset-3 d-flex justify-content-between mb-5 social">
-                    <a class="icon-link icon-link-hover" href="https://www.instagram.com" target="_blank">
+                <div class="col-10 col-md-8 col-xl-6 mb-5 justify-content-between d-flex  mx-auto">
+                    <a class="icon-link icon-link-hover" href="https://www.instagram.com" target="_blank" title="Instagram">
                         <img src="icon/Instagram.png" alt="Instagram" class="img-fluid" style="max-width: 50px;">
                     </a>
-                    <a href="https://www.facebook.com" target="_blank">
+                    <a href="https://www.facebook.com" target="_blank" title="Facebook">
                         <img src="icon/Facebook.png" alt="Facebook" class="img-fluid" style="max-width: 50px;">
                     </a>
-                    <a href="https://www.twitter.com" target="_blank">
+                    <a href="https://www.twitter.com" target="_blank" title="Twitter">
                         <img src="icon/twitter.png" alt="Twitter" class="img-fluid" style="max-width: 50px;">
                     </a>        
-                    <a href="https://www.linkedin.com" target="_blank">
+                    <a href="https://www.linkedin.com" target="_blank" title="Linkedin">
                         <img src="icon/linkedin.png" alt="linkedin" class="img-fluid" style="max-width: 50px;">
                     </a>    
-                    <a href="https://www.tiktok.com" target="_blank">
+                    <a href="https://www.tiktok.com" target="_blank" title="TikTok">
                         <img src="icon/tiktok.png" alt="Tiktok" class="img-fluid" style="max-width: 50px;">
                     </a>               
                 </div>
@@ -129,7 +131,7 @@
 
 
         <div class="row">
-        <footer class="col-8 offset-2 text-center">
+        <footer class="col-12 col-md-10 col-xl-8 text-center">
             <h4>Contactez-nous</h4>
             <p>Adresse : 123 Rue de la Pasta, 1000 Bruxelles<br>
             Téléphone : +32 123 456 789<br>
@@ -138,13 +140,13 @@
             <p class=>© 2023 La Follia della Pasta - Tous droits réservés.</p>
         
         <!-- Cookie Banner -->
-<div id="cb-cookie-banner" class="alert alert-dark text-center mb-0" role="alert">
-    🍪 Ce site utilise des cookies afin de vous fournir la meilleure expérience possible. 
-    <a href="https://www.cookiesandyou.com/" target="blank">En apprendre plus</a>
-    <button type="button" class="btn btn-primary btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
-    J'ai compris
-    </button>
-</div>
+            <div id="cb-cookie-banner" class="alert alert-dark text-center mb-0" role="alert">
+                🍪 Ce site utilise des cookies afin de vous fournir la meilleure expérience possible. 
+                <a href="https://www.cookiesandyou.com/" target="blank">En apprendre plus</a>
+                <button type="button" class="btn btn-primary btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
+                J'ai compris
+                </button>
+            </div>
         
         </footer>  
         </div>

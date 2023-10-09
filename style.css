@@ -14,3 +14,24 @@ body {
    transform: scale(1.2);
 
 }
+.page-link {
+    color:  #CE1126 !important; 
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #009246;
+    border-color: #009246;
+    color: white !important;
+    
+}
+.btn, .bg-success {
+    background-color: #009246 !important;
+    border-color: #009246;
+}
+.text-danger {
+    color: #CE1126 !important;
+}
+.message {
+    background-color: #009246;
+    z-index: 999;
+}
