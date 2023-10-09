@@ -31,7 +31,6 @@ body {
 .text-danger {
     color: #CE1126 !important;
 }
-.message {
-    background-color: #009246;
-    z-index: 999;
+iframe {
+    min-height: 300px;
 }
