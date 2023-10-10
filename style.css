@@ -8,6 +8,7 @@
 }
 body {
     font-family: Montserra; 
+    margin: 0;
 }
 .social img:hover {
    transform: scale(1.2) !important;
