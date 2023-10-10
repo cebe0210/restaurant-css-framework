@@ -33,3 +33,7 @@ body {
 iframe {
     min-height: 300px;
 }
+#successAlert {
+    justify-content: center;
+    align-items: center;
+}

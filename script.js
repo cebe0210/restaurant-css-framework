@@ -24,17 +24,23 @@ function initializeCookieBanner(){
 
 
 
-/*btn*/
-const alertTrigger = document.getElementById('liveAlertBtn');
-const liveAlert = document.getElementById('liveAlert');
+//alerte submit
 
-alertTrigger.addEventListener('click', () => {
-    liveAlert.classList.remove('fade'); // Pour afficher l'alerte
-    liveAlert.style.display = 'block';
+
+$(document).ready(function(){
+    $("form").submit(function(event){
+        if (this.checkValidity()) {
+            event.preventDefault();
+            $("#successAlert").fadeIn();
+            setTimeout(function(){
+                $("#successAlert").fadeOut();
+                $("form")[0].reset();
+            }, 5000);
+        }
+    });
 });
 
-// Gérer la fermeture de l'alerte en cliquant sur le bouton de fermeture
-const closeBtn = liveAlert.querySelector('.btn-close');
-closeBtn.addEventListener('click', () => {
-    liveAlert.style.display = 'none';
-});
+
+
+
+
