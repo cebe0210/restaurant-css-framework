@@ -1,4 +1,4 @@
-# _Restaurant_
+# _Restaurant-CSS-Framework **Bootstrap**_
 
 ## [Visitez la version WEB ](https://cebe0210.github.io/restaurant-css-framework/index.html "La Follia della Pasta")
 
@@ -43,7 +43,16 @@ mention a description and the website URL on the top of the repo
 
 use ONLY royalty-free pictures AND credit in your readme the website where the pictures are from
 
-## _Contenu :_
+## _Ajout :_
+
+Au cour de l'exercice, des consignes supplèmentaires ont été ajoutées.
+
+- une cookie banner.
+- une alert qui confirme l'envois du message dans le formulaire de contact.
+- La barre de navigation doit devenir un burger lorsque la resolution descend. 
+- Les ingredients doivent apparaitre dans le menu.
+
+## _Fichiers :_
 
 Ce site est composé des fichiers suivant :
 
@@ -56,8 +65,28 @@ Ce site est composé des fichiers suivant :
     - desserts.html
 - about.html
 - contact.html
+- style.css (pour quelques personnalisation autre que Bootstrap)
+- script.js (pour le fonctionnement du bouton soumettre et le cookie banner)
+- README.md
 
-J'ai choisi d'utiliser des carousels pour la presentation de la galerie photo. Je trouve le rendu plus visuel et le changenement automatique apporte plus de dynamisme que des images statique. 
+## _Le restaurant :_
+
+Pour cet exercice, j'ai choisi de créer un restaurant de style italien, spécialisé dans l'art des pâtes sous toutes leurs formes.
+
+J'ai nommé ce restaurant "La Follia della Pasta", ce qui signifie "La folie des pâtes" en italien. Conformément aux directives de l'exercice, il s'agit d'une franchise.
+
+J'ai donc imaginé huit restaurants fictifs répartis dans différentes villes belges :
+
+- Bruxelles
+- Namur
+- Liège
+- Charleroi
+- Arlon
+- Anvers
+- Gand
+- Brugge
+
+Pour m'aider pour le contenu textuelle, je me suis aider de ChatGPT. J'ai ecris des textes court et lui ai demander d'améliorer les textes. 
 
 
 
