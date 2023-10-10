@@ -43,12 +43,27 @@ mention a description and the website URL on the top of the repo
 
 use ONLY royalty-free pictures AND credit in your readme the website where the pictures are from
 
+## _Contenu :_
 
-## Images :
+Ce site est composé des fichiers suivant :
+
+- Index.html
+- Menu.html
+- Une galerie photo avec pagination :
+    - suggestions.html
+    - entrees.html
+    - plats.html
+    - desserts.html
+- about.html
+- contact.html
+
+J'ai choisi d'utiliser des carousels pour la presentation de la galerie photo. Je trouve le rendu plus visuel et le changenement automatique apporte plus de dynamisme que des images statique. 
+
+
+
+## _Images :_
 site : https://unsplash.com/  
 * merci à :
-
-
 
 **Photo de [***Pixzolo Photography***](https://unsplash.com/fr/@pixzolo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Pixzolo Photography")** sur [*Unsplash*](https://unsplash.com/fr/photos/aeESmmFKH0M?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText "Unsplash")
   
@@ -133,11 +148,6 @@ logo
 **Photo de [***Zoë Gayah Jonker***](https://unsplash.com/fr/@zoegayah?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)** sur [*Unsplash*](https://unsplash.com/fr/photos/IIs0z8QZO-s?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
 **Photo de [***Alex Vasey***](https://unsplash.com/fr/@alexrvasey?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)** sur [*Unsplash*](https://unsplash.com/fr/photos/zMbxBDg4qBc?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
-
-          
-
-
-
 
 icon
 [**Pâtes icônes créées par Flat Icons - Flaticon**](https://www.flaticon.com/fr/icones-gratuites/pates "pâtes icônes")
