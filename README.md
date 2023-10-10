@@ -71,11 +71,11 @@ Ce site est composé des fichiers suivant :
 
 ## _Le restaurant :_
 
-Pour cet exercice, j'ai choisi de créer un restaurant de style italien, spécialisé dans l'art des pâtes sous toutes leurs formes.
+Pour cet exercice, j'ai choisi de créer un restaurant de style italien, spécialisé dans l'art des pâtes sous toutes leurs formes.  
 
-J'ai nommé ce restaurant "La Follia della Pasta", ce qui signifie "La folie des pâtes" en italien. Conformément aux directives de l'exercice, il s'agit d'une franchise.
+J'ai nommé ce restaurant "La Follia della Pasta", ce qui signifie "La folie des pâtes" en italien. Conformément aux directives de l'exercice, il s'agit d'une franchise.  
 
-J'ai donc imaginé huit restaurants fictifs répartis dans différentes villes belges :
+J'ai donc imaginé huit restaurants fictifs répartis dans différentes villes belges :  
 
 - Bruxelles
 - Namur
@@ -86,10 +86,9 @@ J'ai donc imaginé huit restaurants fictifs répartis dans différentes villes b
 - Gand
 - Brugge
 
-Pour m'aider pour le contenu textuelle, je me suis aider de ChatGPT. J'ai ecris des textes court et lui ai demander d'améliorer les textes. 
-
-
-
+Pour concevoir le contenu textuel, j'ai eu le précieux soutien de ChatGPT, qui m'a aidé à rédiger des textes concis et engageants.   
+ 
+En ce qui concerne les galeries photos, j'ai opté pour des carrousels, car je trouve qu'elles offrent une attraction visuelle et dynamique grâce au défilement automatique.  
 
 
 ## _Images :_
