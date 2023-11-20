@@ -71,7 +71,7 @@ Ce site est composé des fichiers suivant :
 
 ## _Le restaurant :_
 
-Pour cet exercice, j'ai choisi de créer un restaurant de style italien, spécialisé dans l'art des pâtes sous toutes leurs formes.  
+Pour cet exercice, j'ai choisi de créer un restaurant de style italien, spécialisé dans l'art des pâtes sous toutes leurs formes.
 
 J'ai nommé ce restaurant "La Follia della Pasta", ce qui signifie "La folie des pâtes" en italien. Conformément aux directives de l'exercice, il s'agit d'une franchise.  
 
