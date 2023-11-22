@@ -8,18 +8,18 @@
     <title>Back-office</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid bg-dark text-white">
         <h1 class="text-center">Back-office</h1>
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" onclick="loadContent('back-office-contact.php')">Contact</a>
+            <a class="nav-link active" aria-current="page" href="#" data-page="back-office-contact.php" onclick="loadContent('back-office-contact.php')">Contact</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onclick="loadContent('back-office-livre-or.php')">Livre d'or</a>
+                <a class="nav-link" href="#" data-page="back-office-livre-or.php"onclick="loadContent('back-office-livre-or.php')">Livre d'or</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onclick="loadContent('back-office-galerie.php')">Galerie</a>
+                <a class="nav-link" href="#" data-page="back-office-galerie.php"onclick="loadContent('back-office-galerie.php')">Galerie</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -31,7 +31,9 @@
         </div>
 
     </div>
-<script src="script-BO.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="script-BO.js"></script>
 </body>
 </html>
