@@ -1,16 +1,3 @@
-//controle des onglets :
-function contenu(page) {
-    fetch(page)
-        .then(reponse => reponse.text())
-        .then(data => {
-            document.getElementById('content-container').innerHTML = data;
-        })
-        .catch(error => console.error('erreur lors du chargement de la page.', error));
-};
-//contenu('back-office-contact.php')
-
-
-//delete message :
 $(document).ready(function () {
     // Au clic sur un bouton de suppression
     $(".delete-btn").click(function () {
@@ -37,9 +24,6 @@ $(document).ready(function () {
                     alert("Erreur lors de la communication avec le serveur. Statut : " + textStatus + ", Erreur : " + errorThrown);
                 }
             });
-            
         }
-        location.reload();
     });
-    
 });

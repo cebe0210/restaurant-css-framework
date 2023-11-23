@@ -1,18 +1,64 @@
 <?php
 include 'config.php';
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Form is submitted, handle the data
+
+    $pseudo = $_POST['pseudo'];
+    $etoiles = $_POST['etoile'];
+    $titre = $_POST['titre'];
+    $message = $_POST['message'];
+
+    // Ajout de débogage
+    error_log("Form submitted. pseudo: $pseudo, etoile: $etoiles, titre: $titre, message: $message");
+
+    try {
+        $stmt = $conn->prepare("INSERT INTO livreor (pseudo, etoile, titre, message) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $pseudo, $etoiles, $titre, $message);
+    
+        if (!$stmt) {
+            die('Error during preparation of the statement: ' . $conn->error);
+        }
+    
+        if ($stmt->execute()) {
+            $stmt->close();
+            header('Location: livre-or.php');
+            exit();
+        } else {
+            die('Error during execution of the statement: ' . $stmt->error);
+        }
+    } catch (Exception $e) {
+        $errorMessage = "Erreur : " . $e->getMessage();
+        error_log($errorMessage);
+        echo $errorMessage;
+    } catch (mysqli_sql_exception $e) {
+        $errorMessage = "Erreur SQL : " . $e->getMessage();
+        error_log($errorMessage);
+        echo $errorMessage;
+    }
+    
+}
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+// The rest of your code to display the comments table
+
 echo '<table class="table table-striped table-hover">
         <tr>
-            <th>ID</th>
-            <th>Date</th>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Message</th>
-            <th>Action</th>
+            <th>id</th>
+            <th>date</th>
+            <th>pseudo</th>
+            <th>etoile</th>
+            <th>titre</th>
+            <th>message</th>
+            <th>action</th>
         </tr>';
 
 try {
-    $stmt = $conn->prepare("SELECT id, date, nom, email, message FROM livreor");
+    $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message FROM livreor");
     $stmt->execute();
     $result = $stmt->get_result();
 
@@ -20,8 +66,9 @@ try {
         echo "<tr>
             <td>" . htmlspecialchars($row['id']) . "</td>
             <td>" . htmlspecialchars($row['date']) . "</td>
-            <td>" . htmlspecialchars($row['nom']) . "</td>
-            <td>" . htmlspecialchars($row['email']) . "</td>
+            <td>" . htmlspecialchars($row['pseudo']) . "</td>
+            <td>" . htmlspecialchars($row['etoile']) . "</td>
+            <td>" . htmlspecialchars($row['titre']) . "</td>
             <td>" . htmlspecialchars($row['message']) . "</td>
             <td>   
                 <button type='button' class='btn btn-danger btn-sm' title='Supprimer' onclick='deleteRow(" . $row['id'] . ")'>
@@ -34,10 +81,16 @@ try {
     }
 } catch (Exception $e) {
     echo "Erreur : " . $e->getMessage();
+    echo "<br>Requête SQL : SELECT id, date, pseudo, etoile, titre, email, message FROM livreor";
+    echo "<br>Trace de pile : " . $e->getTraceAsString();
 } finally {
     echo "</table>";
-    $stmt->close();
+    if ($stmt !== null) {
+        $stmt->close();
+    }
     $conn->close();
 }
+
+
 ?>
 

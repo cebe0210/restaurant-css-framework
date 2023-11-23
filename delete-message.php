@@ -2,7 +2,6 @@
 include 'config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer l'ID du message à supprimer depuis la requête POST
     $messageId = $_POST["id"];
 
     // Préparer la déclaration de suppression

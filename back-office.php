@@ -13,13 +13,13 @@
 
         <ul class="nav nav-tabs">
             <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" data-page="back-office-contact.php" onclick="loadContent('back-office-contact.php')">Contact</a>
+            <a class="nav-link" href="#" onclick="contenu('back-office-contact.php')">Contact</a> 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-page="back-office-livre-or.php"onclick="loadContent('back-office-livre-or.php')">Livre d'or</a>
+                <a class="nav-link" href="#" onclick="contenu('back-office-livre-or.php')">Livre d'or</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" data-page="back-office-galerie.php"onclick="loadContent('back-office-galerie.php')">Galerie</a>
+                <a class="nav-link" href="#" onclick="contenu('back-office-galerie.php')">Galerie</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
@@ -27,9 +27,8 @@
         </ul>
         
         <div id="content-container">
-            <!-- Le contenu de l'onglet sera chargé ici -->
-        </div>
-
+         <?php include 'back-office-contact.php' ?>
+        </div> 
     </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

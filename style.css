@@ -1,19 +1,27 @@
-@font-face {
-    font-family: Montserra;
+/* @font-face {
+    font-family: Montserrat;
     src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 #cb-cookie-banner { 
-    position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; border-radius: 0; display: none;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 999; 
+    border-radius: 0; 
+    display: none;
 }
+
 body {
-    font-family: Montserra; 
+    font-family: Montserrat; 
     margin: 0;
 }
+
 .social img:hover {
    transform: scale(1.2) !important;
-
 }
+
 .page-link {
     color:  #CE1126 !important; 
 }
@@ -22,21 +30,47 @@ body {
     background-color: #009246;
     border-color: #009246;
     color: white !important;
-    
 }
+
 .btn, .bg-success {
     background-color: #009246 !important;
     border-color: #009246;
 }
+
 .text-danger {
     color: #CE1126 !important;
 }
+
 iframe {
     min-height: 300px;
 }
+
 #successAlert {
    position: fixed;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
+} */
+
+/*etoiles*/
+#etoiles input[type="radio"] {
+    display: none;
+}
+
+#etoiles label {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#etoiles label::before {
+    content: '★';
+    margin: 10px;
+    color: lightgrey;
+}
+
+#etoiles input[type='radio']:checked + label::before {
+    color: gold;
+}
+body {
+    background-color: red;
 }
