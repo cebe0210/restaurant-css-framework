@@ -8,7 +8,7 @@
     <title>Back-office</title>
 </head>
 <body>
-    <div class="container-fluid bg-dark text-white">
+    <div class="container-fluid bg-dark text-white vh-100">
         <h1 class="text-center">Back-office</h1>
 
         <ul class="nav nav-tabs">
@@ -27,7 +27,7 @@
         </ul>
         
         <div id="content-container">
-         <?php include 'back-office-contact.php' ?>
+         <?php include 'back-office-livre-or.php' ?>
         </div> 
     </div>
 

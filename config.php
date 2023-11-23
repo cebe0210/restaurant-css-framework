@@ -10,14 +10,14 @@ $dbname = "contact";
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Vérifier la connexion
-if ($conn->connect_error) {
-    die("Échec de la connexion à la base de données : " . $conn->connect_error);
-}
+// if ($conn->connect_error) {
+//     die("Échec de la connexion à la base de données : " . $conn->connect_error);
+// }
 
 
 
-else {
-    echo "Connexion à la base de données réussie!";
-}
+// else {
+//     echo "Connexion à la base de données réussie!";
+// }
 
 ?>

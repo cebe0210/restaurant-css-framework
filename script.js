@@ -48,3 +48,32 @@ $(document).ready(function () {
         }
     });
 });
+// gestion des étoiles du livre d'or :
+
+// gestion des étoiles du livre d'or :
+$(document).ready(function () {
+    // Vérifie si le formulaire sur la page du livre d'or existe
+    const form = $('#commentaire');
+    if (!form.length) {
+        return; // Sortir du script si le formulaire n'est pas présent
+    }
+
+    const ratingInputs = $('#etoiles input[type="radio"]');
+    const ratingLabels = $('#etoiles label');
+
+    form.on('change', function (event) {
+        const selectedRating = event.target.value;
+
+        // Mettre à jour les étoiles à gauche
+        ratingLabels.each(function (index) {
+            if (index < selectedRating) {
+                $(this).css('color', 'gold');
+            } else {
+                $(this).css('color', 'lightgrey');
+            }
+        });
+    });
+});
+
+
+

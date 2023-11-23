@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
     font-family: Montserrat;
     src: url(Montserrat/Montserrat-VariableFont_wght.ttf);
 }
@@ -50,7 +50,7 @@ iframe {
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-} */
+} 
 
 /*etoiles*/
 #etoiles input[type="radio"] {
@@ -70,7 +70,4 @@ iframe {
 
 #etoiles input[type='radio']:checked + label::before {
     color: gold;
-}
-body {
-    background-color: red;
 }

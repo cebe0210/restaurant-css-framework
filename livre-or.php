@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="index.css?v=<?php echo time(); ?>">    
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">    
     <title>Livre d'or</title>
     <link rel="icon" href="img/farfalle.png" type="image/x-icon" sizes="32x32">
 </head>
 <body>
-    <div class="container-fluid bg-dark text-white vh-100">
+    <div class="container-fluid bg-dark text-white ">
 
 <div class="row">
     <header class="col-md-12">
@@ -47,7 +47,7 @@
 </div>
 
 <div class="row">
-            <form class="mt-5" id="soumettre" method="post" action="back-office-livre-or.php">
+            <form class="mt-5" id="commentaire" method="post" action="back-office-livre-or.php">
                 <div class="row ">
                     <div class="col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">    
                         <input type="text" id="pseudo" class="form-control" name="pseudo" placeholder="Pseudo" aria-label="pseudo" required>
@@ -85,6 +85,52 @@
             <h4 class="alert-heading">Message envoyé avec succès!</h4>
             <p>Merci d'avoir soumis votre message. Nous avons bien reçu votre demande et nous vous répondrons dans les plus brefs délais.</p>
           </div>
+    <!-- Affichage des commentaires : -->
+          <div class="commentaire">
+
+
+            <!-- <div class="card col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">
+                <div class="card-header">
+                    Quote
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+                </div>
+            </div>   -->
+            <?php
+            echo '<div class="card-body">';           
+            include 'config.php';
+            try {
+                $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message FROM livreor");
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="card col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">';
+                    echo '<div class="card-body">';
+                    echo '<p class="card-text">By: ' . htmlspecialchars($row['etoile']) . '</p>';
+                    echo '<p class="card-text">' . htmlspecialchars($row['message']) . '</p>';
+                    echo '</div>';
+                    echo '<div class="card-footer">';
+                    echo '<p class="card-text">By: ' . htmlspecialchars($row['pseudo']) . '</p>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } catch (Exception $e) {
+                echo "Erreur : " . $e->getMessage();
+            } finally {
+                if ($stmt !== null) {
+                    $stmt->close();
+                }
+                $conn->close();
+            }
+
+            echo '</div>';
+            ?>
+          </div>
 
  
         
@@ -95,6 +141,7 @@
             <?php include 'footer.php' ?>
         </footer> 
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
