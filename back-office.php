@@ -8,7 +8,7 @@
     <title>Back-office</title>
 </head>
 <body>
-    <div class="container-fluid bg-dark text-white vh-100">
+    <div class="container-fluid bg-dark text-white">
         <h1 class="text-center">Back-office</h1>
 
         <ul class="nav nav-tabs">
@@ -29,10 +29,16 @@
         <div id="content-container">
          <?php include 'back-office-livre-or.php' ?>
         </div> 
+    
+        <footer>
+            <?php include 'footer.php' ?>
+        </footer>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+   
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="script-BO.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="script-BO.js"></script> 
+
 </body>
 </html>

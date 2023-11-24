@@ -23,32 +23,73 @@ function initializeCookieBanner(){
     }
 
 
+// //envoie du form et data dans la DB.
+// $(document).ready(function () {
+//     $("form").submit(function (event) {
+//         // Empêcher la soumission automatique du formulaire
+//         event.preventDefault();
+
+//         // Vérifier si le formulaire est valide
+//         if (this.checkValidity()) {
+//             // Récupérer les données du formulaire
+//             var formData = $(this).serialize();
+
+//             // Envoyer les données du formulaire à la page back-office-contact.php
+//             $.post("back-office-contact.php", formData, function (response) {
+//                 // Afficher l'alerte de succès
+//                 $("#successAlert").fadeIn();
+
+//                 // Réinitialiser le formulaire après 5 secondes
+//                 setTimeout(function () {
+//                     $("#successAlert").fadeOut();
+//                     $("form")[0].reset();
+//                 }, 5000);
+//             });
+//         }
+//     });
+// });
+
 //envoie du form et data dans la DB.
-$(document).ready(function () {
-    $("form").submit(function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.querySelector('form');
+
+    form.addEventListener('submit', function (event) {
         // Empêcher la soumission automatique du formulaire
         event.preventDefault();
 
         // Vérifier si le formulaire est valide
         if (this.checkValidity()) {
             // Récupérer les données du formulaire
-            var formData = $(this).serialize();
+            var formData = new FormData(this);
 
             // Envoyer les données du formulaire à la page back-office-contact.php
-            $.post("back-office-contact.php", formData, function (response) {
+            fetch("back-office-contact.php", {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(response) {
+                return response.text();
+            })
+            .then(function(data) {
                 // Afficher l'alerte de succès
-                $("#successAlert").fadeIn();
+                document.getElementById("successAlert").style.display = "block";
 
                 // Réinitialiser le formulaire après 5 secondes
                 setTimeout(function () {
-                    $("#successAlert").fadeOut();
-                    $("form")[0].reset();
+                    document.getElementById("successAlert").style.display = "none";
+                    form.reset();
                 }, 5000);
+            })
+            .catch(function(error) {
+                console.error('Erreur lors de l\'envoi de la requête AJAX :', error);
             });
         }
     });
 });
-// gestion des étoiles du livre d'or :
+
+
+
+
 
 // gestion des étoiles du livre d'or :
 $(document).ready(function () {

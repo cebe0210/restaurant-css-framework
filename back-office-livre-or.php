@@ -1,6 +1,7 @@
 <?php
 include 'config.php';
 
+//envoie les données du formulaire vers la DB :
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Form is submitted, handle the data
 
@@ -10,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = $_POST['message'];
 
     // Ajout de débogage
-    error_log("Form submitted. pseudo: $pseudo, etoile: $etoiles, titre: $titre, message: $message");
+    error_log("Form submitted. pseudo: $pseudo, etoile: $etoile, titre: $titre, message: $message");
 
     try {
         $stmt = $conn->prepare("INSERT INTO livreor (pseudo, etoile, titre, message) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $pseudo, $etoiles, $titre, $message);
+        $stmt->bind_param("ssss", $pseudo, $etoile, $titre, $message);
     
         if (!$stmt) {
             die('Error during preparation of the statement: ' . $conn->error);
@@ -44,23 +45,25 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 
-// The rest of your code to display the comments table
 
-echo '<table class="table table-striped table-hover">
-        <tr>
-            <th>id</th>
-            <th>date</th>
-            <th>pseudo</th>
-            <th>etoile</th>
-            <th>titre</th>
-            <th>message</th>
-            <th>action</th>
-        </tr>';
+// Fonction pour afficher les commentaires
+function displayComments() {
+    global $conn;
 
-try {
-    $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message, validation FROM livreor");
+    $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message, publier FROM livreor");
     $stmt->execute();
     $result = $stmt->get_result();
+
+    echo '<table class="table table-striped table-hover">
+            <tr>
+                <th>id</th>
+                <th>date</th>
+                <th>pseudo</th>
+                <th>etoile</th>
+                <th>titre</th>
+                <th>message</th>
+                <th>action</th>
+            </tr>';
 
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
@@ -70,28 +73,68 @@ try {
             <td>" . htmlspecialchars($row['etoile']) . "</td>
             <td>" . htmlspecialchars($row['titre']) . "</td>
             <td>" . htmlspecialchars($row['message']) . "</td>
-            <td>   
-                " . htmlspecialchars($row['validation']) . "
-                <button type='button' class='btn btn-danger btn-sm' title='Supprimer' onclick='deleteRow(" . $row['id'] . ")'>
+            <td>" . htmlspecialchars($row['publier']) . "</td>
+            <td>
+                <a href='delete-livreor.php?id=" . $row['id'] . "' class='btn btn-danger btn-sm' title='Supprimer'>
                     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash3' viewBox='0 0 16 16'>
-                        <path d='M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z'/>
+                        <path d='...'></path>
                     </svg>
-                </button>
+                </a>                
+                <form method='post' action='back-office-livre-or.php'>
+                    <input type='hidden' name='publishComment' value='1'>
+                    <input type='hidden' name='commentIdToPublish' value='" . $row['id'] . "'>
+                    <button type='submit' class='btn btn-success btn-sm' title='Publier'>
+                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check2' viewBox='0 0 16 16'>
+                            <path d='...'></path>
+                        </svg>
+                    </button>
+                </form>
             </td>
         </tr>";
     }
-} catch (Exception $e) {
-    echo "Erreur : " . $e->getMessage();
-    echo "<br>Requête SQL : SELECT id, date, pseudo, etoile, titre, email, message, validation FROM livreor";
-    echo "<br>Trace de pile : " . $e->getTraceAsString();
-} finally {
-    echo "</table>";
-    if ($stmt !== null) {
-        $stmt->close();
-    }
-    $conn->close();
+
+    echo '</table>';
 }
 
+// Vérifier si le formulaire de publication a été soumis
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['publishComment'])) {
+    $commentIdToPublish = $_POST['commentIdToPublish'];
+    
+    // Ajoutez le code pour publier le commentaire avec l'ID $commentIdToPublish
+    $stmt = $conn->prepare("UPDATE livreor SET publier = 1 WHERE id = ?");
+    $stmt->bind_param("i", $commentIdToPublish);
 
+    if ($stmt->execute()) {
+        $stmt->close();
+        header('Location: back-office-livre-or.php');
+        exit();
+    } else {
+        die('Error during execution of the statement: ' . $stmt->error);
+    }
+}
+// Appeler la fonction displayComments une seule fois après la boucle
+displayComments();
 ?>
+
+
+<!-- Votre code HTML pour l'affichage de la table -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Office</title>
+    <!-- Ajoutez les liens vers vos fichiers CSS et JavaScript ici si nécessaire -->
+</head>
+<body>
+
+    <h1>Back Office - Livre d'or</h1>
+
+    <!-- Afficher les commentaires -->
+    <?php displayComments(); ?>
+
+</body>
+</html>
+
+
 

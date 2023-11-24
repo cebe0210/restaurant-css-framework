@@ -86,51 +86,49 @@
             <p>Merci d'avoir soumis votre message. Nous avons bien reçu votre demande et nous vous répondrons dans les plus brefs délais.</p>
           </div>
     <!-- Affichage des commentaires : -->
-          <div class="commentaire">
+    <div class="commentaire">
+        <?php
+        include 'config.php';
+        echo '<div class="card-body">';
 
-
-            <!-- <div class="card col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">
-                <div class="card-header">
-                    Quote
-                </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                        <p>A well-known quote, contained in a blockquote element.</p>
-                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                    </blockquote>
-                </div>
-            </div>   -->
-            <?php
-            echo '<div class="card-body">';           
-            include 'config.php';
-            try {
-                $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message FROM livreor");
-                $stmt->execute();
-                $result = $stmt->get_result();
-
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card col-12 col-md-10 col-xl-8 mb-3 mx-auto d-flex align-items-center">';
-                    echo '<div class="card-body">';
-                    echo '<p class="card-text">By: ' . htmlspecialchars($row['etoile']) . '</p>';
-                    echo '<p class="card-text">' . htmlspecialchars($row['message']) . '</p>';
-                    echo '</div>';
-                    echo '<div class="card-footer">';
-                    echo '<p class="card-text">By: ' . htmlspecialchars($row['pseudo']) . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            } catch (Exception $e) {
-                echo "Erreur : " . $e->getMessage();
-            } finally {
-                if ($stmt !== null) {
-                    $stmt->close();
-                }
-                $conn->close();
+        try {
+            $stmt = $conn->prepare("SELECT id, date, pseudo, etoile, titre, message, publier FROM livreor WHERE publier = 1");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="card col-12 col-md-10 col-xl-8 mb-3 mx-auto">';
+                echo '<div class="card-header">';
+                echo '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>' . htmlspecialchars($row['pseudo']) . ' : '; 
+                $etoile = intval($row['etoile']); // Convertir la valeur de 'etoile' en un entier
+                for ($i = 0; $i < $etoile; $i++) {
+                echo '★';
+                }   
+                echo '</div>';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . htmlspecialchars($row['titre']) . '</h5>';
+                echo '<p class="card-text">' . htmlspecialchars($row['message']) . '</p>';
+                echo '<small>' . date("F, Y", strtotime($row['date'])) . '</small>';
+                echo '</div>';
+                echo '</div>';
             }
+            
+        } catch (Exception $e) {
+            echo "Erreur : " . $e->getMessage();
+        } finally {
+            if ($stmt !== null) {
+                $stmt->close();
+            }
+            $conn->close();
+        }
+        
+        echo '</div>';
+        
+        ?>
+    </div>
 
-            echo '</div>';
-            ?>
-          </div>
+
 
  
         
@@ -141,8 +139,9 @@
             <?php include 'footer.php' ?>
         </footer> 
     </div>
+    <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    
 </body>
 </html>

@@ -1,22 +1,19 @@
 <?php
 include 'config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $messageId = $_POST["id"];
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
+    $commentIdToDelete = $_GET['id'];
 
-    // Préparer la déclaration de suppression
+    // Ajoutez le code pour supprimer le commentaire avec l'ID $commentIdToDelete
     $stmt = $conn->prepare("DELETE FROM livreor WHERE id = ?");
-    $stmt->bind_param("i", $messageId);
+    $stmt->bind_param("i", $commentIdToDelete);
 
-    // Exécuter la déclaration de suppression
     if ($stmt->execute()) {
-        echo "success";
+        $stmt->close();
+        header('Location: back-office.php');
+        exit();
     } else {
-        echo "Erreur lors de la suppression du message : " . $stmt->error;
+        die('Error during execution of the statement: ' . $stmt->error);
     }
-
-    // Fermer la déclaration et la connexion
-    $stmt->close();
-    $conn->close();
 }
 ?>
